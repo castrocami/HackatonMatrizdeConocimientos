@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import 'firebase/auth';
 import { useFirebaseApp } from 'reactfire';
 import logo from '../images/logoEverisVerde.png';
+import '../style/login.css';
 import { useHistory } from 'react-router-dom';
 
 const Login = (props) => {
@@ -22,10 +23,10 @@ const Login = (props) => {
     <div className="login">
       <img src={logo} width="400px" className="logo" alt="logo" />
       <span>Usuario</span>
-      <input type="email" id="mail" onChange={(e => setEmail(e.target.value))} />
+      <input type="email" id="mail" className="textInput" onChange={(e => setEmail(e.target.value))} />
       <span>Contraseña</span>
-      <input type="password" id="pass" onChange={(e => setPassword(e.target.value))} />
-      <button onClick={submit} to="/OrderName">Ingresar</button>
+      <input type="password" id="pass" className="textInput" onChange={(e => setPassword(e.target.value))} />
+      <button className="btn" onClick={submit} to="/OrderName">Ingresar</button>
     </div>
   )
 }
