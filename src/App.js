@@ -7,11 +7,11 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route>
-          <Login exact path='/'/>
+        <Route exact path='/'>
+          <Login/>
         </Route>
-        <Route>
-          <Profile path='/profile'/>
+        <Route path='/profile'>
+          <Profile />
         </Route>
       </Switch>
     </Router>

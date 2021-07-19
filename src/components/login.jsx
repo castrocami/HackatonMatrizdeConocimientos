@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import 'firebase/auth';
 import { useFirebaseApp } from 'reactfire';
 import logo from '../images/logoEverisVerde.png';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Login = (props) => {
   const [email, setEmail] = useState('');
@@ -11,12 +11,13 @@ const Login = (props) => {
   const submit = () => {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
-      <Redirect to="/profile" />
+        history.push('/profile')
       })
       .catch((error) => {
         alert('Correo electrónico o contraseña inválido');
       });
   }
+  let history = useHistory();
   return (
     <div className="login">
       <img src={logo} width="400px" className="logo" alt="logo" />
