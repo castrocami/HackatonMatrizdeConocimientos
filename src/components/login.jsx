@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import 'firebase/auth';
 import { useFirebaseApp } from 'reactfire';
 import logo from '../images/logoEverisVerde.png';
-
-
+import { Redirect } from 'react-router-dom';
 
 const Login = (props) => {
   const [email, setEmail] = useState('');
@@ -12,7 +11,7 @@ const Login = (props) => {
   const submit = () => {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        console.log("Sesión iniciada!");
+      <Redirect to="/profile" />
       })
       .catch((error) => {
         alert('Correo electrónico o contraseña inválido');
