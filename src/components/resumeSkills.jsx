@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 const ResumeSkills = props => {
     const [newArray, setNewArray] = useState([]); 
+    const [userData, setUserData] = useState({});
     const firebase = useFirebaseApp();
     const user = firebase.auth().currentUser.email;
     const db = firebase.firestore();
@@ -21,13 +22,14 @@ const ResumeSkills = props => {
                 }
               })
               setNewArray(tempArray);
+              setUserData(userData);
             });
           });
     },[user]);
 
     return (
         <div>
-          {newArray.map((element) => <h1>{element}</h1>)}
+          {newArray.map((element) => <h1>{element}{userData[element]}</h1>)}
       </div>
   );
 };
