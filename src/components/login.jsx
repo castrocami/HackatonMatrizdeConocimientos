@@ -9,6 +9,7 @@ const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const firebase = useFirebaseApp();
+
   const submit = () => {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
@@ -19,6 +20,7 @@ const Login = (props) => {
       });
   }
   let history = useHistory();
+
   return (
     <div className="login">
       <img src={logo} width="400px" className="logo" alt="logo" />
@@ -30,4 +32,5 @@ const Login = (props) => {
     </div>
   )
 }
+
 export default Login;
