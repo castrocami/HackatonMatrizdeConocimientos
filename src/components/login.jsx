@@ -28,7 +28,7 @@ const Login = (props) => {
       <input type="email" id="mail" className="textInput" onChange={(e => setEmail(e.target.value))} />
       <span>Contraseña</span>
       <input type="password" id="pass" className="textInput" onChange={(e => setPassword(e.target.value))} />
-      <button className="btn" onClick={submit} to="/OrderName">Ingresar</button>
+      <button className="btn" onClick={submit}>Ingresar</button>
     </div>
   )
 }
