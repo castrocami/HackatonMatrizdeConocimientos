@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-import { useFirebaseApp, useUser } from 'reactfire';
+import { useFirebaseApp } from 'reactfire';
 import logo from '../images/logoEverisBlanco.png';
+import LogOutBtn from './logOut';
 
 const Profile = props => {
   const firebase = useFirebaseApp();
@@ -12,7 +13,7 @@ const Profile = props => {
       <Row>
         <header>
           <div className="header">
-            <img src={logo} className="logo" width="60px" rel="preload" />
+            <img src={logo} className="logo" width="60px" rel="preload" alt="logo"/>
             <p>Bienvenid@: {user}</p>
           </div>
         </header>
@@ -26,6 +27,7 @@ const Profile = props => {
         <Col>
           <div>
             <h1>Aquí van los botones</h1>
+            <LogOutBtn />
           </div>
         </Col>
       </Row>
