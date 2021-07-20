@@ -3,6 +3,8 @@ import { Container, Col, Row } from 'react-bootstrap';
 import { useFirebaseApp } from 'reactfire';
 import logo from '../images/logoEverisBlanco.png';
 import LogOutBtn from './logOut';
+import ResumeSkills from './resumeSkills';
+import AddSkill from './addSkill';
 
 const Profile = props => {
   const firebase = useFirebaseApp();
@@ -21,12 +23,12 @@ const Profile = props => {
       <Row>
         <Col>
           <div>
-            <h1>Aquí van las skills</h1>
+            <ResumeSkills />
           </div>
         </Col>
         <Col>
           <div>
-            <h1>Aquí van los botones</h1>
+            <AddSkill />
             <LogOutBtn />
           </div>
         </Col>
