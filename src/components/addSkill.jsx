@@ -65,7 +65,7 @@ function MyVerticallyCenteredModal(props) {
         setNewArray(tempArray);
       });
     });
-  }, [user]);
+  }, [user, db]);
 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
@@ -75,7 +75,6 @@ function MyVerticallyCenteredModal(props) {
         </Modal.Title>
         <XLg onClick={closeModalX} />
       </Modal.Header>
-
       <Modal.Body>
         <Container>
           <Row>
@@ -130,11 +129,9 @@ function MyVerticallyCenteredModal(props) {
           </Row>
         </Container>
       </Modal.Body>
-
       <Modal.Footer>
         <Button disabled={selectedSkill == null, selectedLevel == null} onClick={editLevelSkills(selectedSkill, selectedLevel)}>Guardar y enviar a evaluación</Button>
       </Modal.Footer>
-
     </Modal>
   );
 }
@@ -147,7 +144,6 @@ function AddSkill() {
       <Button variant="primary" onClick={() => setModalShow(true)}>
         Añadir aptitud nueva
       </Button>
-
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}

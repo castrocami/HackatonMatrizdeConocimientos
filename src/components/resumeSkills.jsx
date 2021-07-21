@@ -11,7 +11,7 @@ const ResumeSkills = props => {
     const user = firebase.auth().currentUser.email;
     const db = firebase.firestore();
 
-    useEffect(()=>{
+    useEffect(() => {
         db.collection('users').where('user.email', '==', user).onSnapshot((querySnapshot) => {
             querySnapshot.forEach((doc) => {
               const userData = doc.data().user;
@@ -26,7 +26,7 @@ const ResumeSkills = props => {
               setUserData(userData);
             });
           });
-    },[user]);
+    },[user, db]);
 
     return (
       <div>
