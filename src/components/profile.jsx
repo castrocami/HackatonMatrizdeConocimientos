@@ -5,7 +5,8 @@ import logo from '../images/logoEverisBlanco.png';
 import LogOutBtn from './logOut';
 import ResumeSkills from './resumeSkills';
 import AddSkill from './addSkill';
-import FilterSkills from './filterSkills'
+import FilterSkills from './filterSkills';
+import PendingSkills from './pendingSkills';
 
 const Profile = props => {
   const firebase = useFirebaseApp();
@@ -32,6 +33,7 @@ const Profile = props => {
             <AddSkill />            
             <LogOutBtn />
             <FilterSkills />
+            <PendingSkills />
           </div>
         </Col>
       </Row>
