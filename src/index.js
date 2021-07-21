@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import firebase from "firebase/app";
 import { FirebaseAppProvider } from 'reactfire';
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // https://firebase.google.com/docs/web/setup?authuser=0
 const firebaseConfig = {

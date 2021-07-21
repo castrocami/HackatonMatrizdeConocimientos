@@ -2,6 +2,7 @@ import React from 'react';
 import "firebase/firestore";
 import { useFirebaseApp } from 'reactfire';
 import { useState, useEffect } from 'react';
+import { Table } from 'react-bootstrap';
 
 const ResumeSkills = props => {
     const [newArray, setNewArray] = useState([]); 
@@ -28,10 +29,42 @@ const ResumeSkills = props => {
     },[user]);
 
     return (
-        <div>
-          {newArray.map((element) => <h1>{element}{userData[element]}</h1>)}
+      <div>
+        <Table responsive>
+          <thead className= "headerContent">
+            <tr>
+              {Array.from({ length: 1 }).map((_, index) => (
+                <th key={index}>Skill</th>
+              ))}
+              {Array.from({ length: 1 }).map((_, index) => (
+                <th key={index}>Nivel</th>
+              ))}
+              {Array.from({ length: 1 }).map((_, index) => (
+                <th key={index}>Estado</th>
+              ))}
+            </tr>
+          </thead>
+          <thead className= "tableContent"> 
+            <tr>
+              {Array.from({ length: 1 }).map((_, index) => (
+                <th key={index}>{newArray.map((element) => (
+                  <p>
+                    {element}
+                  </p>
+                ))}</th>
+              ))}
+              {Array.from({ length: 1 }).map((_, index) => (
+                <th key={index}>{newArray.map((element) => (
+                  <p>
+                    {userData[element]}
+                  </p>
+                ))}</th>
+              ))}
+            </tr>
+          </thead>
+        </Table>
       </div>
-  );
+    );
 };
 
 export default ResumeSkills;
