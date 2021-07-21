@@ -12,6 +12,7 @@ import '../style/addSkill.css';
 function MyVerticallyCenteredModal(props) {
   const [newArray, setNewArray] = useState([]);
   const [selectedSkill, setSelectedSkill] = useState(null);
+  const [selectedLevel, setSelectedLevel] = useState(null);
   const firebase = useFirebaseApp();
   const user = firebase.auth().currentUser.email;
   const db = firebase.firestore();
@@ -23,28 +24,32 @@ function MyVerticallyCenteredModal(props) {
   }
 
   const editLevelSkills = (selectedSkill, formLabel) => {
-    db.collection('users').where('user.email', '==', user).get().then((querySnapshot) => {
-      let saveUserId;
-      querySnapshot.forEach((doc) => {
-        saveUserId = doc.id;
-      })
-
-      const editSkill = db.collection('users').doc(saveUserId);
-      return editSkill.update({
-        [selectedSkill]: "Básico",
-      })
-        .then(() => {
-          console.log('Document successfully updated!');
+    return () => {
+      db.collection('users').where('user.email', '==', user).onSnapshot((querySnapshot) => {
+        let saveUserId;
+        querySnapshot.forEach((doc) => {
+          saveUserId = doc.id;
         })
-        .catch((error) => {
-          // The document probably doesn't exist.
-          console.error('Error updating document: ', error);
-        });
-    });
+  
+        const editSkill = db.collection('users').doc(saveUserId);
+        return editSkill.update({
+          [`user.${selectedSkill}`]: formLabel,
+        })
+          .then(() => {
+            props.onHide();
+            eventSelectedSkill(null)();
+            console.log('Document successfully updated!');
+          })
+          .catch((error) => {
+            // The document probably doesn't exist.
+            console.error('Error updating document: ', error);
+          });
+      });
+    }
   };
 
   useEffect(() => {
-    db.collection('users').where('user.email', '==', user).get().then((querySnapshot) => {
+    db.collection('users').where('user.email', '==', user).onSnapshot((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         const userData = doc.data().user;
         const keysArray = Object.keys(userData);
@@ -58,8 +63,6 @@ function MyVerticallyCenteredModal(props) {
       });
     });
   }, [user]);
-
-  console.log(newArray);
 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
@@ -83,7 +86,7 @@ function MyVerticallyCenteredModal(props) {
             <Col>
               <fieldset>
                 <h1>{selectedSkill}</h1>
-                <Form.Group as={Row} className="mb-3">
+                <Form.Group as={Row} className="mb-3" onChange={(event) => {setSelectedLevel(event.target.value)}}>
                   <Form.Label as="legend" column sm={2}>
                     Nivel
                   </Form.Label>
@@ -91,24 +94,28 @@ function MyVerticallyCenteredModal(props) {
                     <Form.Check
                       type="radio"
                       label="Básico"
+                      value="Básico"
                       name="formHorizontalRadios"
                       id="formHorizontalRadios1"
                     />
                     <Form.Check
                       type="radio"
                       label="Regular"
+                      value="Regular"
                       name="formHorizontalRadios"
                       id="formHorizontalRadios2"
                     />
                     <Form.Check
                       type="radio"
                       label="Bueno"
+                      value="Bueno"
                       name="formHorizontalRadios"
                       id="formHorizontalRadios3"
                     />
                     <Form.Check
                       type="radio"
                       label="Excelente"
+                      value="Excelente"
                       name="formHorizontalRadios"
                       id="formHorizontalRadios3"
                     />
@@ -121,7 +128,7 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Body>
 
       <Modal.Footer>
-        <Button onClick={editLevelSkills(selectedSkill, Form.Check.Label)}>Guardar y enviar a evaluación</Button>
+        <Button  disabled={selectedSkill == null} onClick={editLevelSkills(selectedSkill, selectedLevel)}>Guardar y enviar a evaluación</Button>
       </Modal.Footer>
       
     </Modal>

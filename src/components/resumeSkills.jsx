@@ -12,7 +12,7 @@ const ResumeSkills = props => {
     const db = firebase.firestore();
 
     useEffect(()=>{
-        db.collection('users').where('user.email', '==', user).get().then((querySnapshot) => {
+        db.collection('users').where('user.email', '==', user).onSnapshot((querySnapshot) => {
             querySnapshot.forEach((doc) => {
               const userData = doc.data().user;
               const keysArray = Object.keys(userData);
