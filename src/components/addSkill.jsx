@@ -5,9 +5,7 @@ import { useState, useEffect } from 'react';
 import { Modal, Button, Container, Col, Row, Card, ListGroup, Form } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../style/addSkill.css';
-/*import {XLg} from 'react-bootstrap-icons';
-<XLg/>*/
-
+import { XLg } from 'react-bootstrap-icons';
 
 function MyVerticallyCenteredModal(props) {
   const [newArray, setNewArray] = useState([]);
@@ -23,6 +21,11 @@ function MyVerticallyCenteredModal(props) {
     }
   }
 
+  const closeModalX = () => {
+    props.onHide();
+    setSelectedLevel(null)
+  }
+
   const editLevelSkills = (selectedSkill, formLabel) => {
     return () => {
       db.collection('users').where('user.email', '==', user).onSnapshot((querySnapshot) => {
@@ -30,7 +33,7 @@ function MyVerticallyCenteredModal(props) {
         querySnapshot.forEach((doc) => {
           saveUserId = doc.id;
         })
-  
+
         const editSkill = db.collection('users').doc(saveUserId);
         return editSkill.update({
           [`user.${selectedSkill}`]: formLabel,
@@ -66,10 +69,11 @@ function MyVerticallyCenteredModal(props) {
 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
-      <Modal.Header closeButton>
+      <Modal.Header >
         <Modal.Title id="contained-modal-title-vcenter">
           Añadir aptitudes
         </Modal.Title>
+        <XLg onClick={closeModalX} />
       </Modal.Header>
 
       <Modal.Body>
@@ -86,7 +90,7 @@ function MyVerticallyCenteredModal(props) {
             <Col>
               <fieldset>
                 <h1>{selectedSkill}</h1>
-                <Form.Group as={Row} className="mb-3" onChange={(event) => {setSelectedLevel(event.target.value)}}>
+                <Form.Group as={Row} className="mb-3" onChange={(event) => { setSelectedLevel(event.target.value) }}>
                   <Form.Label as="legend" column sm={2}>
                     Nivel
                   </Form.Label>
@@ -128,9 +132,9 @@ function MyVerticallyCenteredModal(props) {
       </Modal.Body>
 
       <Modal.Footer>
-        <Button  disabled={selectedSkill == null} onClick={editLevelSkills(selectedSkill, selectedLevel)}>Guardar y enviar a evaluación</Button>
+        <Button disabled={selectedSkill == null, selectedLevel == null} onClick={editLevelSkills(selectedSkill, selectedLevel)}>Guardar y enviar a evaluación</Button>
       </Modal.Footer>
-      
+
     </Modal>
   );
 }
