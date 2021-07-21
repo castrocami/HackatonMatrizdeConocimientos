@@ -10,22 +10,32 @@ const FilterSkills = props => {
   const db = firebase.firestore();
   const [modalShow, setModalShow] = useState(false);
   const [selectedSkill, setselectedSkill] = useState(null);
+  const [showName, setShowName] = useState([]);
+  
 
   const handleSelect = (e) => {
     setselectedSkill(e);
   }
 
 useEffect(() => {   
-    console.log(selectedSkill) 
+  let arrayNames = [];
     db.collection('users').get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         const dataUser = doc.data().user;
         if (dataUser[selectedSkill] === "Nulo") {
-          console.log(dataUser.name)
+          //console.log(dataUser.name) 
+          arrayNames.push(dataUser.name);
+          
+          
         }                   
       });
+      setShowName(arrayNames);
     });
 },[selectedSkill, db]) 
+
+
+
+
 
   function MyVerticallyCenteredModal(props) {
     return (
@@ -42,6 +52,14 @@ useEffect(() => {
         </Modal.Header>
         <Modal.Body>
           <h4>Centered Modal</h4>
+          <p>
+             {
+              showName.map((item,i)=> (         
+              <p>{`${item}`}</p>
+                      
+              ))
+                }          
+          </p>
           <p>
             <DropdownButton onSelect={handleSelect} id="dropdown-basic-button" title="Dropdown button">
               <Dropdown.Item eventKey="github" >github</Dropdown.Item>
