@@ -1,0 +1,19 @@
+.modal-body{
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+.selected-skill { 
+    padding: 30px; 
+    background: light-gray; 
+    color: black; 
+  } 
+.selected-skill:hover { 
+    padding: 30px; 
+    background: #B9D305; 
+    color: white; 
+  } 
+ .selected-skill:active { 
+    padding: 30px; 
+    background: gray; 
+    color: white; 
+  }
