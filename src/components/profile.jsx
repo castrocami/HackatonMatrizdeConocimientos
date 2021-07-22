@@ -22,7 +22,7 @@ const Profile = props => {
         </header>
       </Row>
       <Row>
-        <Col>
+        <Col class="skillsTable">
           <div>
             <ResumeSkills />
           </div>
@@ -39,6 +39,5 @@ const Profile = props => {
     </Container>
   );
 };
-
 
 export default Profile;

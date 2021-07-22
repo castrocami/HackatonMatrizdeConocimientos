@@ -20,6 +20,7 @@
 .logoHeader {
   display: flex;
   width: 15%;
+  height: initial;
   margin-left: 50vw;
   margin-top: 1vw;
   margin-bottom: 1vw;
@@ -54,7 +55,35 @@
   border-color: #566301;
 }
 
-.table {
-  margin-left: 2vw;
+.skillsTable {
+  overflow: scroll;
   height: 80vh;
+  width: 50vw;
 }
+
+.logOut {
+  background-color: #8E908F;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+}
+
+.logOut:hover {
+  background-color: #8E908F;
+  opacity: 75%;
+  color: #fff;
+}
+
+/* ::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+} */

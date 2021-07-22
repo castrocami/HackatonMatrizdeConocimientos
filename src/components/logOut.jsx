@@ -20,7 +20,7 @@ const LogOutBtn = props => {
 
   return (
       <div>
-         <button onClick={logOut}>Cerrar Sesión</button>
+         <button className="logOut" onClick={logOut}>Cerrar Sesión</button>
       </div>
   );
 };
