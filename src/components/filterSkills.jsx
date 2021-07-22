@@ -28,9 +28,7 @@ const FilterSkills = props => {
       });
       setShowName(arrayNames);
     });
-  }, [selectedSkill, db])
-
-
+  }, [selectedSkill, db]) 
   
   function MyVerticallyCenteredModal(props) {
     return (
@@ -52,16 +50,16 @@ const FilterSkills = props => {
               <Dropdown.Item eventKey="unity" >unity</Dropdown.Item>
               <Dropdown.Item eventKey="angular" >angular</Dropdown.Item>
             </DropdownButton>
-            <Table responsive className="table-valid-skills" striped bordered hover>
-              <tbody className="table-body">
-                  <tr className="wrap-table">{showName.map((item, i) => (<td className="td-user">{`${item}`}</td>))}
+            <Table responsive className="table-valid-skills-filter" striped bordered hover>
+              <tbody className="table-body-filter" id="hiddenModal" display="none">
+                  <tr className="wrap-table">{showName.map((item, i) => (<td className="tdTable">{`${item}`}</td>))}
                   </tr>
               </tbody>
             </Table>
           </p>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
+          <Button className="button" onClick={props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
     );

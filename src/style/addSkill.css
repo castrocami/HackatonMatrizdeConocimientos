@@ -1,3 +1,8 @@
+.modal-scroll-addSkill {
+  overflow: scroll;
+  height: 60vh;
+} 
+  
 .modal-body {
   max-height: calc(100vh - 200px);
   overflow-y: auto;
@@ -48,18 +53,11 @@
   flex-direction: column;
   font-size: 1em;
 }
-.save-send-btn{
+.save-send-btn {
   background-color: #B9D305;
   border: none;
 }
+
 .save-send-btn:hover{
   background-color: #8E908F;
-}
-
-.modalSize { 
-  position: absolute;
-  left: 17%;
-  top: 50%;
-  margin-top: -150px;
-  max-width: 70%;
 }
