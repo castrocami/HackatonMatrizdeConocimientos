@@ -22,7 +22,7 @@ const Profile = props => {
         </header>
       </Row>
       <Row>
-        <Col class="skillsTable">
+        <Col>
           <div>
             <ResumeSkills />
           </div>
