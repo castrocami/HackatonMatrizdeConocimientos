@@ -55,3 +55,11 @@
 .save-send-btn:hover{
   background-color: #8E908F;
 }
+
+.modalSize { 
+  position: absolute;
+  left: 17%;
+  top: 50%;
+  margin-top: -150px;
+  max-width: 70%;
+}
