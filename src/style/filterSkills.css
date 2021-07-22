@@ -1,0 +1,48 @@
+
+
+
+
+/* For mobile phones: */
+.wrap-table {
+  display: grid;
+  grid-template-columns: repeat(4,30fr);
+  grid-gap: 0;
+  width: max-content;
+}
+
+.table-valid-skills {
+  display: flex;
+  justify-content: center;
+  width: max-content;
+}
+
+/* For mobile phones: */
+@media only screen and (min-width: 600px) {
+  .wrap-table {
+    display: grid;
+    grid-template-columns: repeat(6,30fr);
+    grid-gap: 0;
+    width: max-content;
+  }
+  
+  .table-valid-skills {
+    display: flex;
+    justify-content: center;
+    width: max-content;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .table-valid-skills {
+    display: flex;
+    justify-content: center;
+    width: max-content;
+  }
+  
+  .wrap-table {
+    display: grid;
+    grid-template-columns: repeat(10,10fr);
+    grid-gap: 0;
+    width: max-content;
+  }
+}
