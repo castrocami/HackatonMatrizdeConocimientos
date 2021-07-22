@@ -64,9 +64,9 @@ const ResumeSkills = props => {
           </tr>
         </thead>
         <tbody className="tableContent">
-          {newArray.map((element) => {
+          {newArray.map((element,index) => {
             return (
-              <tr>
+              <tr key= {index}>
                 <td>{element}</td>
                 <td>{userData[element]}</td>
                 <td>Aprobado </td>

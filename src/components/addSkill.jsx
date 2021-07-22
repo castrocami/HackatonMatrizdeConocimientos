@@ -83,7 +83,7 @@ function MyVerticallyCenteredModal(props) {
                 <Card.Header className= "card-header">Aptitud Nueva</Card.Header>
                 <ListGroup variant="flush" className= "skills-card">
                   <div className="modal-scroll-addSkill">
-                  {newArray.map((element) => <ListGroup.Item className={"selected-skill"} onClick={eventSelectedSkill(element)}>{element}</ListGroup.Item>)}
+                  {newArray.map((element,index) => <ListGroup.Item key= {index}className={"selected-skill"} onClick={eventSelectedSkill(element)}>{element}</ListGroup.Item>)}
                   </div>
                 </ListGroup>
               </Card>
