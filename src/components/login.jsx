@@ -24,11 +24,9 @@ const Login = (props) => {
   return (
     <div className="login">
       <img src={logo} width="400px" className="logo" alt="logo" />
-      <span>Usuario</span>
-      <input type="email" id="mail" className="textInput" onChange={(e => setEmail(e.target.value))} />
-      <span>Contraseña</span>
-      <input type="password" id="pass" className="textInput" onChange={(e => setPassword(e.target.value))} />
-      <button className="btn" onClick={submit}>Ingresar</button>
+      <input type="email" id="mail" className="textInput" placeholder="Usuario" onChange={(e => setEmail(e.target.value))} />
+      <input type="password" id="pass" className="textInput" placeholder="Contraseña" onChange={(e => setPassword(e.target.value))} />
+      <button className="btnLogin" onClick={submit}>Ingresar</button>
     </div>
   )
 }

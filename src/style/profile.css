@@ -1,0 +1,60 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0%;
+}
+
+.container {
+  padding-right: initial;
+  padding-left: initial;
+  max-width: 2000px;
+}
+
+.header {
+  display: flex;
+  width: 100vw;
+  background-color: #B9D305;
+  justify-content: space-around;
+}
+
+.logoHeader {
+  display: flex;
+  width: 15%;
+  margin-left: 50vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
+.greeting {
+  align-self: flex-end;
+  font-family: Arial Black;
+  font-variant-caps: revert;
+  padding-left: 1vw;
+}
+
+.col {
+  height: 80vh;  
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vw;
+}
+
+.buttons>*{
+  background-color: #B9D305;
+  border-color: #8E908F;
+  margin: 3vh;
+}
+
+.btn-primary:hover {
+  background-color: #8E908F;
+  border-color: #566301;
+}
+
+.table {
+  margin-left: 2vw;
+  height: 80vh;
+}
