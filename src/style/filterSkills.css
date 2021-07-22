@@ -1,0 +1,73 @@
+/* For mobile phones: */
+.wrap-table {
+  display: grid;
+  grid-template-columns: repeat(4,30fr);
+  grid-gap: 0;
+  width: max-content;
+  background-color: white;
+}
+
+.table-valid-skills-filter {
+  display: flex;
+  justify-content: center;
+  width: max-content;
+}
+
+.table-body-filter {
+ padding: 35px;
+ background-color: #6785C1; 
+}
+
+.tdTable {
+  padding: .5rem .5rem;
+  background-color: #ffffff;
+}
+
+#dropdown-basic-button {
+  display: flex;
+  background-color: #B9D305;
+  border-color: #8E908F;
+  margin: 3vh;
+}
+
+.dropdown-menu {
+  height: 40vh;
+  overflow: scroll;
+}
+
+ .button {
+    background-color: #B9D305;
+    border-color: #8E908F;
+    margin: 3vh;
+  }
+
+/* For mobile phones: */
+@media only screen and (min-width: 600px) {
+  .wrap-table {
+    display: grid;
+    grid-template-columns: repeat(6,30fr);
+    grid-gap: 0;
+    width: max-content;
+  }
+  
+  .table-valid-skills-filter {
+    display: flex;
+    justify-content: center;
+    width: max-content;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .table-valid-skills-filter {
+    display: flex;
+    justify-content: center;
+    width: max-content;
+  }
+  
+  .wrap-table {
+    display: grid;
+    grid-template-columns: repeat(8,10fr);
+    grid-gap: 0;
+    width: max-content;
+  }
+}

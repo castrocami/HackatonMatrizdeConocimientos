@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.headerContent {
+  font-size: 1.5em;
+}
+
+
+.tableContent {
+  font-size: 1em;
+  font-weight:lighter;
+  text-transform: capitalize;
+  color: #403d39;
+
+}
