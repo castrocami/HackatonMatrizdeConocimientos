@@ -17,7 +17,7 @@ const Profile = props => {
     <Container className="container">
       <Row>
         <header className="header">
-            <p className="greeting">Bienvenid@: {user}</p>
+            <p className="greeting">Hola: {user}</p>
             <img src={logo} className="logoHeader" width="400px" rel="preload" alt="logo"/>
         </header>
       </Row>
