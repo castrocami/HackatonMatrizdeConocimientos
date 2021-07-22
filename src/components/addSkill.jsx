@@ -88,7 +88,7 @@ function MyVerticallyCenteredModal(props) {
             </Col>
             <Col>
               <fieldset>
-                <h1>{selectedSkill}</h1>
+                <h3>{selectedSkill}</h3>
                 <Form.Group as={Row} className="mb-3" onChange={(event) => { setSelectedLevel(event.target.value) }}>
                   <Form.Label as="legend" column sm={2}>
                     Nivel
@@ -138,7 +138,6 @@ function MyVerticallyCenteredModal(props) {
 
 function AddSkill() {
   const [modalShow, setModalShow] = React.useState(false);
-
   return (
     <>
       <Button variant="primary" onClick={() => setModalShow(true)}>

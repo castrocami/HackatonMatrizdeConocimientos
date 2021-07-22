@@ -7,19 +7,18 @@ import ResumeSkills from './resumeSkills';
 import AddSkill from './addSkill';
 import FilterSkills from './filterSkills';
 import PendingSkills from './pendingSkills';
+import '../style/profile.css';
 
 const Profile = props => {
   const firebase = useFirebaseApp();
   const user = firebase.auth().currentUser.email
 
   return (
-    <Container>
+    <Container className="container">
       <Row>
-        <header>
-          <div className="header">
-            <img src={logo} className="logo" width="60px" rel="preload" alt="logo"/>
-            <p>Bienvenid@: {user}</p>
-          </div>
+        <header className="header">
+            <p className="greeting">Bienvenid@: {user}</p>
+            <img src={logo} className="logoHeader" width="400px" rel="preload" alt="logo"/>
         </header>
       </Row>
       <Row>
@@ -29,11 +28,11 @@ const Profile = props => {
           </div>
         </Col>
         <Col>
-          <div>
-            <AddSkill />            
-            <LogOutBtn />
+          <div className="buttons">
+            <AddSkill />
             <FilterSkills />
-            <PendingSkills />
+            <PendingSkills />            
+            <LogOutBtn />
           </div>
         </Col>
       </Row>
