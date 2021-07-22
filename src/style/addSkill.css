@@ -1,19 +1,57 @@
-.modal-body{
-    max-height: calc(100vh - 200px);
-    overflow-y: auto;
+.modal-body {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
 }
-.selected-skill { 
-    padding: 30px; 
-    background: light-gray; 
-    color: black; 
-  } 
-.selected-skill:hover { 
-    padding: 30px; 
-    background: #B9D305; 
-    color: white; 
-  } 
- .selected-skill:active { 
-    padding: 30px; 
-    background: gray; 
-    color: white; 
-  }
+.selected-skill {
+  padding: 10px;
+  background: light-gray;
+  color: black;
+}
+.selected-skill:hover {
+  padding: 10px;
+  background: #b9d305;
+  color: white;
+}
+.selected-skill:active {
+  padding: 10px;
+  background: gray;
+  color: white;
+}
+.modal-header-as {
+  background-color: #b9d305;
+}
+
+.card-header {
+  width: 550px;
+  background-color: #6785c1;
+  border-inline-end-color: #0a0a0a;
+  text-align: center;
+}
+.skills-card {
+  background-color: #6785c1;
+  padding: 30px;
+  width: 550px;
+}
+.mb-3,
+.skill-level-header {
+  display: flex;
+  background-color: #6785c1;
+  width: 450px;
+  margin-left: 100px;
+  text-align: justify;
+}
+
+.skill-level-header {
+  height: 25px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  font-size: 1em;
+}
+.save-send-btn{
+  background-color: #B9D305;
+  border: none;
+}
+.save-send-btn:hover{
+  background-color: #8E908F;
+}
