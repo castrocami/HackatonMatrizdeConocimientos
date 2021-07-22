@@ -69,8 +69,8 @@ function MyVerticallyCenteredModal(props) {
 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
-      <Modal.Header >
-        <Modal.Title id="contained-modal-title-vcenter">
+      <Modal.Header className= "modal-header-as">
+        <Modal.Title id="contained-modal-title-vcenter" className="modal-title-as">
           Añadir aptitudes
         </Modal.Title>
         <XLg onClick={closeModalX} />
@@ -80,17 +80,17 @@ function MyVerticallyCenteredModal(props) {
           <Row>
             <Col>
               <Card style={{ width: '18rem' }}>
-                <Card.Header>Aptitud Nueva</Card.Header>
-                <ListGroup variant="flush">
+                <Card.Header className= "card-header">Aptitud Nueva</Card.Header>
+                <ListGroup variant="flush" className= "skills-card">
                   {newArray.map((element) => <ListGroup.Item className={"selected-skill"} onClick={eventSelectedSkill(element)}>{element}</ListGroup.Item>)}
                 </ListGroup>
               </Card>
             </Col>
             <Col>
               <fieldset>
-                <h3>{selectedSkill}</h3>
+                <h3 className="skill-level-header">{selectedSkill}</h3>
                 <Form.Group as={Row} className="mb-3" onChange={(event) => { setSelectedLevel(event.target.value) }}>
-                  <Form.Label as="legend" column sm={2}>
+                  <Form.Label className="form-label" as="legend" column sm={2}>
                     Nivel
                   </Form.Label>
                   <Col sm={10}>
@@ -130,7 +130,7 @@ function MyVerticallyCenteredModal(props) {
         </Container>
       </Modal.Body>
       <Modal.Footer>
-        <Button disabled={selectedSkill == null, selectedLevel == null} onClick={editLevelSkills(selectedSkill, selectedLevel)}>Guardar y enviar a evaluación</Button>
+        <Button className="save-send-btn" disabled={selectedSkill == null, selectedLevel == null} onClick={editLevelSkills(selectedSkill, selectedLevel)}>Guardar y enviar a evaluación</Button>
       </Modal.Footer>
     </Modal>
   );

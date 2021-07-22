@@ -4,6 +4,7 @@ import { useFirebaseApp } from 'reactfire';
 import { Button, Modal, Dropdown, DropdownButton } from 'react-bootstrap';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import '../style/filterSkills.css';
 
 const FilterSkills = props => {
   const firebase = useFirebaseApp();
@@ -41,11 +42,11 @@ const FilterSkills = props => {
       >
         <Modal.Header>
           <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
+            Listado de aptitudes
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Centered Modal</h4>
+          <h4>Listado de aptitudes</h4>
            <p>
             <DropdownButton onSelect={handleSelect} id="dropdown-basic-button" title="Filtro de búsqueda">
               <Dropdown.Item eventKey="github" >github</Dropdown.Item>
