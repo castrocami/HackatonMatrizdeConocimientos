@@ -4,8 +4,8 @@
     padding: 5%;
 }
 .modal-dialog{
-    max-width: 100%; 
-    margin: 0%;
+    max-width: 80%; 
+    margin: auto;
 }
 .modal-header-ppal{
     background-color: #B9D305;
