@@ -29,8 +29,8 @@ const ResumeSkills = props => {
     },[user, db]);
 
     return (
-      <div>
-        <Table responsive>
+      <div className="skillsTable">
+        <Table>
           <thead className= "headerContent">
             <tr>
               {Array.from({ length: 1 }).map((_, index) => (

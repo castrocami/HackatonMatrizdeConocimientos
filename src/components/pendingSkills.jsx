@@ -17,28 +17,28 @@ function ValidateUserSkills(props) {
         <Form.Group as={Row} className="mb-3">
           <Col sm={10}>
             <Form.Check
-              type="radio"
+              type="checkbox"
               label="Angular - Básico"
               value="Básico"
               name="formHorizontalRadios"
               id="formHorizontalRadios1"
             />
             <Form.Check
-              type="radio"
+              type="checkbox"
               label="Github - Regular"
               value="Regular"
               name="formHorizontalRadios"
               id="formHorizontalRadios2"
             />
             <Form.Check
-              type="radio"
+              type="checkbox"
               label="Jira - Bueno"
               value="Bueno"
               name="formHorizontalRadios"
               id="formHorizontalRadios3"
             />
             <Form.Check
-              type="radio"
+              type="checkbox"
               label="Unity - Excelente"
               value="Excelente"
               name="formHorizontalRadios"
