@@ -6,12 +6,12 @@ require("firebase/firestore");
 
 // https://firebase.google.com/docs/web/setup?authuser=0
 const firebaseConfig = {
-    apiKey: "AIzaSyC3karrBdqmSf_LCSUrOSjkDe8pW6dhNoQ",
-    authDomain: "matriz-de-conocimientos.firebaseapp.com",
-    projectId: "matriz-de-conocimientos",
-    storageBucket: "matriz-de-conocimientos.appspot.com",
-    messagingSenderId: "617798514262",
-    appId: "1:617798514262:web:3daf80159d359aaf562df7"
+    apiKey: "AIzaSyDrsI5Bs_umqYQ7wJpac_elFrt6sGrbIyE",
+    authDomain: "matriz-conocimientos2.firebaseapp.com",
+    projectId: "matriz-conocimientos2",
+    storageBucket: "matriz-conocimientos2.appspot.com",
+    messagingSenderId: "496649347432",
+    appId: "1:496649347432:web:f834f060f91659a43836dd"
   };
 
 // Initialize Firebase

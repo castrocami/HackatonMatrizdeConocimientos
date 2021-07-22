@@ -30,27 +30,27 @@ const ResumeSkills = props => {
     });
   }, [user, db]);
 
-  const deleteSkill = (skill) => {
-    return () => {
-      db.collection('users').where('user.email', '==', user).onSnapshot((querySnapshot) => {
-        let saveUserId;
-        querySnapshot.forEach((doc) => {
-          saveUserId = doc.id;
-        })
-        const editSkill = db.collection('users').doc(saveUserId);
-        console.log("HOLA", saveUserId)
-        return editSkill.update({
-          [`user.${skill}`]: "Nulo",
-        })
-          .then(() => {
-            console.log('Document successfully updated!');
-          })
-          .catch((error) => {
-            console.error('Error updating document: ', error);
-          });
-      });
-    }
-  }
+  // const deleteSkill = (skill) => {
+  //   return () => {
+  //     db.collection('users').where('user.email', '==', user).get().then((querySnapshot) => {
+  //       let saveUserId;
+  //       querySnapshot.forEach((doc) => {
+  //         saveUserId = doc.id;
+  //       })
+  //       const editSkill = db.collection('users').doc(saveUserId);
+  //       console.log("HOLA", saveUserId)
+  //       return editSkill.update({
+  //         [`user.${skill}`]: "Nulo",
+  //       })
+  //         .then(() => {
+  //           console.log('Document successfully updated!');
+  //         })
+  //         .catch((error) => {
+  //           console.error('Error updating document: ', error);
+  //         });
+  //     });
+  //   }
+  // }
 
   return (
     <div className="skillsTable">
@@ -70,7 +70,7 @@ const ResumeSkills = props => {
                 <td>{element}</td>
                 <td>{userData[element]}</td>
                 <td>Aprobado </td>
-                <td onClick={deleteSkill(element)} className="delete-skill"><XLg /></td>
+                <td  className="delete-skill"><XLg /></td>
               </tr>
             )
           })}
