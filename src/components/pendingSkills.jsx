@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button, Table, Form, Row, Col } from "react-bootstrap";
+import '../style/pendingSkills.css';
 
 function ValidateUserSkills(props) {
   return (
@@ -9,7 +10,7 @@ function ValidateUserSkills(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header>
+      <Modal.Header className = "modal-header-one-user">
         <Modal.Title id="contained-modal-title-vcenter">Usuario 1</Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -47,7 +48,7 @@ function ValidateUserSkills(props) {
         </Form.Group>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Validar</Button>
+        <Button className = "btn-one-user" onClick={props.onHide}>Validar</Button>
       </Modal.Footer>
     </Modal>
   );
@@ -63,13 +64,14 @@ function MyVerticallyCenteredModal(props) {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Header>
+      <Modal.Header className = "modal-header-ppal">
         <Modal.Title id="contained-modal-title-vcenter">
-          Aptitudes por confirmar
+          <h1>Aptitudes por confirmar</h1>
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <Table striped bordered hover>
+      <div className= "div-modal">
+      <Modal.Body className = "modal-body-ppal">
+        <Table className ="table-valid-skills" striped bordered hover>
           <thead>
             <tr>
               <th colSpan="3">Colaboradores:</th>
@@ -77,7 +79,7 @@ function MyVerticallyCenteredModal(props) {
           </thead>
           <tbody>
             <tr>
-              <td onClick={() => setModalShow(true)}>Usuario 1</td>
+              <td className = "td-user" onClick={() => setModalShow(true)}>Usuario 1</td>
               <ValidateUserSkills
                 show={modalShow}
                 onHide={() => setModalShow(false)}
@@ -98,8 +100,9 @@ function MyVerticallyCenteredModal(props) {
           </tbody>
         </Table>
       </Modal.Body>
+      </div>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Cerrar</Button>
+        <Button className = "btn-close-principal-modal" onClick={props.onHide}>Cerrar</Button>
       </Modal.Footer>
     </Modal>
   );

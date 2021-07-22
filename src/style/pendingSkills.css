@@ -1,0 +1,38 @@
+/* Principal modal */
+.div-modal{
+    background-color: #FFFFFF;
+    padding: 5%;
+}
+.modal-dialog{
+    max-width: 100%; 
+    margin: 0%;
+}
+.modal-header-ppal{
+    background-color: #B9D305;
+} 
+.table-valid-skills{
+    background-color: #FFFFFF;
+    border: #6785C1 5px solid;
+}
+.modal-body-ppal{
+    background-color: #6785C1;
+    border: #6785C1 5px solid;
+}
+.btn-close-principal-modal, .btn-one-user{
+    background-color: #B9D305;
+    border: none;
+}
+.btn-close-principal-modal:hover, .btn-one-user:hover{
+    background-color: #8E908F;
+}
+#contained-modal-title-vcenter h1{
+    font-size: 4vh;
+}
+
+/* One user skill modal */
+.modal-header-one-user{
+    background-color: #B9D305;
+}
+.td-user:hover{
+    background-color: #8E908F;
+}
