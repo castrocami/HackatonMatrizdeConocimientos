@@ -68,7 +68,7 @@ function MyVerticallyCenteredModal(props) {
   }, [user, db]);
 
   return (
-    <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
+    <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered  className= "modalSize">
       <Modal.Header className= "modal-header-as">
         <Modal.Title id="contained-modal-title-vcenter" className="modal-title-as">
           Añadir aptitudes
