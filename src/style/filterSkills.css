@@ -30,6 +30,11 @@
   margin: 3vh;
 }
 
+.dropdown-menu {
+  height: 40vh;
+  overflow: scroll;
+}
+
  .button {
     background-color: #B9D305;
     border-color: #8E908F;
