@@ -15,19 +15,23 @@ const Profile = props => {
 
   return (
     <Container className="container">
-      <Row>
-        <header className="header">
+        <header class="navbar navbar-expand-lg" className="header">
+        <Row>
+          <Col xs={6}>
             <p className="greeting">Hola: {user}</p>
-            <img src={logo} className="logoHeader" width="400px" rel="preload" alt="logo"/>
+          </Col>
+          <Col xs={6}>
+            <img src={logo} className="logoHeader my-2" rel="preload" alt="logo"/>
+          </Col>
+        </Row>
         </header>
-      </Row>
       <Row>
-        <Col class="skillsTable">
+        <Col md ={6} xs={12} class="skillsTable">
           <div>
             <ResumeSkills />
           </div>
         </Col>
-        <Col>
+        <Col md ={6} xs={12}>
           <div className="buttons">
             <AddSkill />
             <FilterSkills />

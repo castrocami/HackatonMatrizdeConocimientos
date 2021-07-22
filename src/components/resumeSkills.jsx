@@ -54,7 +54,7 @@ const ResumeSkills = props => {
 
   return (
     <div className="skillsTable">
-      <Table striped bordered hover size="sm">
+      <Table responsive striped bordered hover size="sm">
         <thead className="headerContent">
           <tr>
             <th>Mis Skills</th>

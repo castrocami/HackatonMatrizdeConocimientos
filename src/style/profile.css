@@ -11,19 +11,14 @@
 }
 
 .header {
-  display: flex;
-  width: 100vw;
   background-color: #B9D305;
-  justify-content: space-around;
 }
 
 .logoHeader {
   display: flex;
-  width: 15%;
-  height: initial;
-  margin-left: 50vw;
-  margin-top: 1vw;
-  margin-bottom: 1vw;
+  height: 70px;
+  margin-right: 5vw;
+  float: right;
 }
 
 .greeting {
@@ -31,17 +26,14 @@
   font-family: Arial Black;
   font-variant-caps: revert;
   padding-left: 1vw;
-}
-
-.col {
-  height: 80vh;  
+  margin-top: 5%;
 }
 
 .buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10vw;
+  margin-top: 2vw;
 }
 
 .buttons>*{
@@ -57,10 +49,8 @@
 
 .skillsTable {
   overflow: scroll;
-  height: 80vh;
   width: 100%;
   padding: 4%;
-  margin-left: 10%;
 }
 
 .logOut {
@@ -89,3 +79,7 @@
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 } */
+
+@media screen and (max-width:768px) {
+
+}
