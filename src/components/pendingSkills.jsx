@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { Modal, Button, Table, Form, Row, Col } from "react-bootstrap";
 import '../style/pendingSkills.css';
+import { XLg } from 'react-bootstrap-icons';
 
 function ValidateUserSkills(props) {
+
+  const closeModalX = () => {
+    props.onHide();
+  }
+  
   return (
     <Modal
       {...props}
@@ -12,33 +18,34 @@ function ValidateUserSkills(props) {
     >
       <Modal.Header className = "modal-header-one-user">
         <Modal.Title id="contained-modal-title-vcenter">Usuario 1</Modal.Title>
+        <XLg onClick={closeModalX} />
       </Modal.Header>
       <Modal.Body>
         <Form.Group as={Row} className="mb-3">
           <Col sm={10}>
             <Form.Check
-              type="radio"
+              type="checkbox"
               label="Angular - Básico"
               value="Básico"
               name="formHorizontalRadios"
               id="formHorizontalRadios1"
             />
             <Form.Check
-              type="radio"
+              type="checkbox"
               label="Github - Regular"
               value="Regular"
               name="formHorizontalRadios"
               id="formHorizontalRadios2"
             />
             <Form.Check
-              type="radio"
+              type="checkbox"
               label="Jira - Bueno"
               value="Bueno"
               name="formHorizontalRadios"
               id="formHorizontalRadios3"
             />
             <Form.Check
-              type="radio"
+              type="checkbox"
               label="Unity - Excelente"
               value="Excelente"
               name="formHorizontalRadios"
